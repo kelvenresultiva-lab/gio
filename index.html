@@ -878,6 +878,22 @@ html { scroll-behavior: smooth; }
   mask-repeat: no-repeat;
 }
 </style>
+<style id="faixa-na-divisa">
+/* Celular: a faixa que rola fica por cima da divisa entre o hero e a seção de baixo */
+@media (max-width: 767px) {
+  .elementor-6505 .elementor-element.elementor-element-2204f83 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: -37px !important;
+    margin-bottom: -37px !important;
+    z-index: 30 !important;
+    pointer-events: none;
+  }
+  /* espaço extra para a faixa não encostar nos conteúdos vizinhos */
+  .elementor-6505 .elementor-element.elementor-element-82c3dfc > .e-con-inner { padding-bottom: 84px !important; }
+  .elementor-6505 .elementor-element.elementor-element-4977235 > .e-con-inner { padding-top: 84px !important; }
+}
+</style>
 </head>
 <body data-rsssl="1" class="wp-singular page-template page-template-elementor_canvas page page-id-6505 wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-canvas elementor-kit-8 elementor-page elementor-page-6505 e--ua-blink e--ua-chrome e--ua-webkit" data-elementor-device-mode="desktop" cz-shortcut-listen="true">
 	<!-- Google Tag Manager (noscript) -->
