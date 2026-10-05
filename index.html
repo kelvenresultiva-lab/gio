@@ -786,6 +786,40 @@ html { scroll-behavior: smooth; }
   .elementor-6505 .elementor-nav-menu--dropdown .elementor-item { white-space: nowrap; }
 }
 </style>
+<style id="carregado-centralizado">
+/* Seção "Pare de ser o carregado do lobby": tudo centralizado e a foto do time vira o fundo do card */
+.elementor-6505 .elementor-element-051cacb {
+  position: relative !important;
+  isolation: isolate;
+  overflow: hidden;
+  align-items: stretch !important;
+}
+.elementor-6505 .elementor-element-051cacb::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0; top: 42%; height: auto !important; width: auto !important;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(5, 3, 8, 0.45) 0%, rgba(5, 3, 8, 0.12) 100%), url("./arquivos/time-trofeu.webp") 50% 62% / cover no-repeat;
+  filter: saturate(1.1) contrast(1.05);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.45) 28%, #000 55%, #000 80%, transparent 100%), linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.45) 28%, #000 55%, #000 80%, transparent 100%), linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
+  mask-composite: intersect;
+}
+.elementor-6505 .elementor-element-7472847 { display: none !important; }
+.elementor-6505 .elementor-element-c6dce8a { align-items: center !important; text-align: center; padding-bottom: 330px !important; }
+.elementor-6505 .elementor-element-c29a77a { width: 100% !important; text-align: center !important; }
+.elementor-6505 .elementor-element-c29a77a .elementor-heading-title { text-align: center !important; margin-left: auto; margin-right: auto; max-width: 900px; }
+.elementor-6505 .elementor-element-b6e5854 { width: 100% !important; max-width: 780px !important; margin-left: auto !important; margin-right: auto !important; }
+.elementor-6505 .elementor-element-b6e5854 .gio-historia { text-align: center !important; text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75); color: #e3e3ea; }
+.elementor-6505 .elementor-element-a4ea7af { width: 100% !important; margin-top: 12px; }
+.elementor-6505 .elementor-element-a4ea7af .elementor-button-wrapper { text-align: center !important; }
+@media (max-width: 767px) {
+  .elementor-6505 .elementor-element-c6dce8a { padding-bottom: 250px !important; }
+  .elementor-6505 .elementor-element-051cacb::before { top: auto !important; height: 300px !important; background-size: auto, cover; background-position: 0 0, 56% 50%; -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 38%, #000 82%, transparent 100%), linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0%, #000 38%, #000 82%, transparent 100%), linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%); }
+}
+</style>
 </head>
 <body data-rsssl="1" class="wp-singular page-template page-template-elementor_canvas page page-id-6505 wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-canvas elementor-kit-8 elementor-page elementor-page-6505 e--ua-blink e--ua-chrome e--ua-webkit" data-elementor-device-mode="desktop" cz-shortcut-listen="true">
 	<!-- Google Tag Manager (noscript) -->
