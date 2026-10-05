@@ -738,7 +738,7 @@ body, .elementor-widget-container, .elementor-nav-menu a, .elementor-item {
     width: 66%;
     z-index: -1;
     pointer-events: none;
-    background: url("./arquivos/gio-foto.png") 70% 28% / cover no-repeat;
+    background: url("./arquivos/gio-foto.jpg") 70% 28% / cover no-repeat;
     filter: saturate(1.12) contrast(1.05);
     -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 60%, transparent 100%), linear-gradient(180deg, #000 0%, #000 72%, transparent 100%);
     -webkit-mask-composite: source-in;
@@ -761,7 +761,7 @@ body, .elementor-widget-container, .elementor-nav-menu a, .elementor-item {
     height: 460px;
     z-index: -1;
     pointer-events: none;
-    background: url("./arquivos/gio-foto.png") 60% 22% / cover no-repeat;
+    background: url("./arquivos/gio-foto.jpg") 60% 22% / cover no-repeat;
     filter: saturate(1.12) contrast(1.05);
     -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 42%, transparent 90%);
     mask-image: linear-gradient(180deg, #000 0%, #000 42%, transparent 90%);
@@ -906,6 +906,15 @@ html { scroll-behavior: smooth; }
 .elementor-6505 .elementor-element-cf903d8 { width: 100% !important; }
 .elementor-6505 .elementor-element-cf903d8 .elementor-button-wrapper { text-align: center !important; }
 </style>
+<style id="gio-yt-css">
+/* Vídeo do topo: miniatura leve; o player do YouTube só carrega quando clicam */
+.gio-yt { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; cursor: pointer; overflow: hidden; border-radius: inherit; }
+.gio-yt img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.gio-yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.gio-yt-play { position: absolute; left: 50%; top: 50%; width: 68px; height: 48px; margin: -24px 0 0 -34px; background: #f00; border-radius: 14px; box-shadow: 0 4px 18px rgba(0,0,0,.5); transition: transform .15s, background .15s; }
+.gio-yt-play::after { content: ""; position: absolute; left: 27px; top: 14px; border-style: solid; border-width: 10px 0 10px 18px; border-color: transparent transparent transparent #fff; }
+.gio-yt:hover .gio-yt-play, .gio-yt:focus-visible .gio-yt-play { transform: scale(1.08); background: #e00; }
+</style>
 </head>
 <body data-rsssl="1" class="wp-singular page-template page-template-elementor_canvas page page-id-6505 wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-canvas elementor-kit-8 elementor-page elementor-page-6505 e--ua-blink e--ua-chrome e--ua-webkit" data-elementor-device-mode="desktop" cz-shortcut-listen="true">
 	<!-- Google Tag Manager (noscript) -->
@@ -971,10 +980,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<div class="elementor-widget-container">
 									<span class="sub-completo"><span style="color: #fcf7ff;">Então assista o vídeo para descobrir a metodologia que eu criei para fazer você conseguir isso de forma <span style="color:#1e96fc;font-weight:700">prática, rápida e efetiva!</span></span></span><span class="sub-curto" style="color: #fcf7ff;">Assista ao vídeo e descubra a metodologia que eu criei: <span style="color:#1e96fc;font-weight:700">prática, rápida e efetiva!</span></span>								</div>
 				</div>
-				<div class="elementor-element elementor-element-b99c80e elementor-widget__width-initial elementor-widget elementor-widget-video" data-id="b99c80e" data-element_type="widget" data-e-type="widget" data-settings="{&quot;youtube_url&quot;:&quot;https:\/\/www.youtube.com\/watch?v=DAbT9y8L-54&quot;,&quot;show_image_overlay&quot;:&quot;yes&quot;,&quot;image_overlay&quot;:{&quot;url&quot;:&quot;https:\/\/vivendodevideo.com.br\/wp-content\/uploads\/2025\/04\/Thumb.webp&quot;,&quot;id&quot;:6715,&quot;size&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;,&quot;source&quot;:&quot;library&quot;},&quot;video_type&quot;:&quot;youtube&quot;,&quot;controls&quot;:&quot;yes&quot;}" data-widget_type="video.default">
+				<div class="elementor-element elementor-element-b99c80e elementor-widget__width-initial elementor-widget elementor-widget-video" data-id="b99c80e">
 				<div class="elementor-widget-container">
 							<div class="elementor-wrapper elementor-open-inline">
-			<iframe class="elementor-video" frameborder="0" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Vídeo" width="640" height="360" src="https://www.youtube.com/embed/DAbT9y8L-54?feature=oembed&rel=0&modestbranding=1" id="widget2" data-gtm-yt-inspected-14="true"></iframe>				
+			<div class="gio-yt" data-yt="DAbT9y8L-54" role="button" tabindex="0" aria-label="Assistir ao vídeo"><img src="https://i.ytimg.com/vi/DAbT9y8L-54/maxresdefault.jpg" alt="Método IMF do Giozera - assista ao vídeo" width="1280" height="720" decoding="async" fetchpriority="high" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/DAbT9y8L-54/hqdefault.jpg'"><span class="gio-yt-play" aria-hidden="true"></span></div>				
 					</div>
 						</div>
 				</div>
@@ -1141,11 +1150,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </div>
 <div class="gio-dep-prints">
-<img class="gio-dep-print" loading="eager" src="./arquivos/print-1.png" alt="Print de depoimento de aluno 1">
-<img class="gio-dep-print" loading="eager" src="./arquivos/print-2.png" alt="Print de depoimento de aluno 2">
-<img class="gio-dep-print" loading="eager" src="./arquivos/print-3.jpeg" alt="Print de depoimento de aluno 3">
-<img class="gio-dep-print" loading="eager" src="./arquivos/print-4.jpeg" alt="Print de depoimento de aluno 4">
-<img class="gio-dep-print" loading="eager" src="./arquivos/print-5.jpg" alt="Print de depoimento de aluno 5">
+<img class="gio-dep-print" loading="lazy" src="./arquivos/print-1.png" alt="Print de depoimento de aluno 1">
+<img class="gio-dep-print" loading="lazy" src="./arquivos/print-2.jpg" alt="Print de depoimento de aluno 2">
+<img class="gio-dep-print" loading="lazy" src="./arquivos/print-3.jpeg" alt="Print de depoimento de aluno 3">
+<img class="gio-dep-print" loading="lazy" src="./arquivos/print-4.jpeg" alt="Print de depoimento de aluno 4">
+<img class="gio-dep-print" loading="lazy" src="./arquivos/print-5.jpg" alt="Print de depoimento de aluno 5">
 </div>
 </div>
 				<div class="elementor-element elementor-element-7d95766 elementor-absolute elementor-hidden-mobile elementor-widget elementor-widget-image" data-id="7d95766" data-element_type="widget" data-e-type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="image.default">
@@ -1190,7 +1199,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<div class="elementor-element elementor-element-7472847 e-con-full e-flex e-con e-child" data-id="7472847" data-element_type="container" data-e-type="container">
 				<div class="elementor-element elementor-element-6ff6737 img-desktop-mobile elementor-widget elementor-widget-image" data-id="6ff6737" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
 				<div class="elementor-widget-container">
-															<img loading="eager" decoding="async" width="1116" height="744" src="./arquivos/time-trofeu.webp" class="attachment-full size-full gio-carregado-foto" alt="Time comemorando com o troféu">															</div>
+															<img loading="lazy" decoding="async" width="1116" height="744" src="./arquivos/time-trofeu.webp" class="attachment-full size-full gio-carregado-foto" alt="Time comemorando com o troféu">															</div>
 				</div>
 				</div>
 				</div>
@@ -1219,7 +1228,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="elementor-element elementor-element-9aa7902 e-con-full e-flex e-con e-child" data-id="9aa7902" data-element_type="container" data-e-type="container">
 				<div class="elementor-element elementor-element-cc4dd31 scroll-top2 elementor-widget elementor-widget-image" data-id="cc4dd31" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
 				<div class="elementor-widget-container">
-															<img loading="eager" decoding="async" width="470" height="336" src="./arquivos/aula-foto-1.jpg" class="attachment-full size-full" alt="Aula 1">															</div>
+															<img loading="lazy" decoding="async" width="470" height="336" src="./arquivos/aula-foto-1.jpg" class="attachment-full size-full" alt="Aula 1">															</div>
 				</div>
 				<div class="elementor-element elementor-element-bf5b49d elementor-widget-tablet__width-initial scroll-top elementor-widget elementor-widget-icon-box" data-id="bf5b49d" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default">
 				<div class="elementor-widget-container">
@@ -1244,7 +1253,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="elementor-element elementor-element-9aa7902 e-con-full e-flex e-con e-child" data-id="9aa7902" data-element_type="container" data-e-type="container">
 				<div class="elementor-element elementor-element-cc4dd31 scroll-top2 elementor-widget elementor-widget-image" data-id="cc4dd31" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
 				<div class="elementor-widget-container">
-															<img loading="eager" decoding="async" width="470" height="336" src="./arquivos/aula-foto-2.jpg" class="attachment-full size-full" alt="Aula 2">															</div>
+															<img loading="lazy" decoding="async" width="470" height="336" src="./arquivos/aula-foto-2.jpg" class="attachment-full size-full" alt="Aula 2">															</div>
 				</div>
 				<div class="elementor-element elementor-element-bf5b49d elementor-widget-tablet__width-initial scroll-top elementor-widget elementor-widget-icon-box" data-id="bf5b49d" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default">
 				<div class="elementor-widget-container">
@@ -1269,7 +1278,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="elementor-element elementor-element-9aa7902 e-con-full e-flex e-con e-child" data-id="9aa7902" data-element_type="container" data-e-type="container">
 				<div class="elementor-element elementor-element-cc4dd31 scroll-top2 elementor-widget elementor-widget-image" data-id="cc4dd31" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
 				<div class="elementor-widget-container">
-															<img loading="eager" decoding="async" width="470" height="336" src="./arquivos/aula-foto-3.jpg" class="attachment-full size-full" alt="Aula 3">															</div>
+															<img loading="lazy" decoding="async" width="470" height="336" src="./arquivos/aula-foto-3.jpg" class="attachment-full size-full" alt="Aula 3">															</div>
 				</div>
 				<div class="elementor-element elementor-element-bf5b49d elementor-widget-tablet__width-initial scroll-top elementor-widget elementor-widget-icon-box" data-id="bf5b49d" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default">
 				<div class="elementor-widget-container">
@@ -1294,7 +1303,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="elementor-element elementor-element-9aa7902 e-con-full e-flex e-con e-child" data-id="9aa7902" data-element_type="container" data-e-type="container">
 				<div class="elementor-element elementor-element-cc4dd31 scroll-top2 elementor-widget elementor-widget-image" data-id="cc4dd31" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
 				<div class="elementor-widget-container">
-															<img loading="eager" decoding="async" width="470" height="336" src="./arquivos/aula-foto-4.jpg" class="attachment-full size-full" alt="Aula 4">															</div>
+															<img loading="lazy" decoding="async" width="470" height="336" src="./arquivos/aula-foto-4.jpg" class="attachment-full size-full" alt="Aula 4">															</div>
 				</div>
 				<div class="elementor-element elementor-element-bf5b49d elementor-widget-tablet__width-initial scroll-top elementor-widget elementor-widget-icon-box" data-id="bf5b49d" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default">
 				<div class="elementor-widget-container">
@@ -1319,7 +1328,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="elementor-element elementor-element-9aa7902 e-con-full e-flex e-con e-child" data-id="9aa7902" data-element_type="container" data-e-type="container">
 				<div class="elementor-element elementor-element-cc4dd31 scroll-top2 elementor-widget elementor-widget-image" data-id="cc4dd31" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
 				<div class="elementor-widget-container">
-															<img loading="eager" decoding="async" width="470" height="336" src="./arquivos/aula-foto-5.jpg" class="attachment-full size-full" alt="Aula 5">															</div>
+															<img loading="lazy" decoding="async" width="470" height="336" src="./arquivos/aula-foto-5.jpg" class="attachment-full size-full" alt="Aula 5">															</div>
 				</div>
 				<div class="elementor-element elementor-element-bf5b49d elementor-widget-tablet__width-initial scroll-top elementor-widget elementor-widget-icon-box" data-id="bf5b49d" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default">
 				<div class="elementor-widget-container">
@@ -1344,7 +1353,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="elementor-element elementor-element-9aa7902 e-con-full e-flex e-con e-child" data-id="9aa7902" data-element_type="container" data-e-type="container">
 				<div class="elementor-element elementor-element-cc4dd31 scroll-top2 elementor-widget elementor-widget-image" data-id="cc4dd31" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
 				<div class="elementor-widget-container">
-															<img loading="eager" decoding="async" width="470" height="336" src="./arquivos/aula-foto-6.jpg" class="attachment-full size-full" alt="Aula 6 - Extra">															</div>
+															<img loading="lazy" decoding="async" width="470" height="336" src="./arquivos/aula-foto-6.jpg" class="attachment-full size-full" alt="Aula 6 - Extra">															</div>
 				</div>
 				<div class="elementor-element elementor-element-bf5b49d elementor-widget-tablet__width-initial scroll-top elementor-widget elementor-widget-icon-box" data-id="bf5b49d" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default">
 				<div class="elementor-widget-container">
@@ -1369,7 +1378,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="elementor-element elementor-element-9aa7902 e-con-full e-flex e-con e-child" data-id="9aa7902" data-element_type="container" data-e-type="container">
 				<div class="elementor-element elementor-element-cc4dd31 scroll-top2 elementor-widget elementor-widget-image" data-id="cc4dd31" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
 				<div class="elementor-widget-container">
-															<img loading="eager" decoding="async" width="470" height="336" src="./arquivos/aula-foto-7.jpg" class="attachment-full size-full" alt="Aula 7 - Extra">															</div>
+															<img loading="lazy" decoding="async" width="470" height="336" src="./arquivos/aula-foto-7.jpg" class="attachment-full size-full" alt="Aula 7 - Extra">															</div>
 				</div>
 				<div class="elementor-element elementor-element-bf5b49d elementor-widget-tablet__width-initial scroll-top elementor-widget elementor-widget-icon-box" data-id="bf5b49d" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default">
 				<div class="elementor-widget-container">
@@ -1445,7 +1454,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<div class="elementor-element elementor-element-66c010f e-con-full scroll-top e-flex e-con e-child" data-id="66c010f" data-element_type="container" data-e-type="container" data-settings="{&quot;motion_fx_motion_fx_scrolling&quot;:&quot;yes&quot;,&quot;motion_fx_devices&quot;:[&quot;widescreen&quot;,&quot;desktop&quot;,&quot;laptop&quot;,&quot;tablet&quot;,&quot;mobile_extra&quot;,&quot;mobile&quot;]}">
 				<div class="elementor-element elementor-element-75562bb elementor-widget elementor-widget-image" data-id="75562bb" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
 				<div class="elementor-widget-container">
-															<img loading="eager" decoding="async" width="690" height="984" src="./arquivos/gio-professor.jpg" class="attachment-full size-full wp-image-6537" alt="Gio">															</div>
+															<img loading="lazy" decoding="async" width="690" height="984" src="./arquivos/gio-professor.jpg" class="attachment-full size-full wp-image-6537" alt="Gio">															</div>
 				</div>
 				</div>
 					</div>
@@ -2122,4 +2131,18 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 function(b,c){var f="https://analytics.tiktok.com/i18n/pixel/events.js";a._i=a._i||{};a._i[b]=[];a._i[b]._u=f;a._t=a._t||{};a._t[b]=+new Date;a._o=a._o||{};a._o[b]=c||{};c=document.createElement("script");c.type="text/javascript";c.async=!0;c.src=f+"?sdkid\x3d"+b+"\x26lib\x3d"+e;b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(c,b)};a.load("D4A92NRC77U2P8MCO1Q0");a.page()}(window,document,"ttq");</script>
 <script type="text/javascript" id="" charset="">(function(){for(var b=["utm_source","utm_medium","utm_campaign","utm_term","utm_content"],c={},g=!1,e=0;e<b.length;e++){var h=b[e],d=h;var a=window.location.href;d=d.replace(/[\[\]]/g,"\\$\x26");d=new RegExp("[?\x26]"+d+"(\x3d([^\x26#]*)|\x26|#|$)");if(a=(a=d.exec(a))?a[2]?decodeURIComponent(a[2].replace(/\+/g," ")):"":null)c[h]=a,g=!0}if(g){b=new Date;b.setTime(b.getTime()+7776E6);for(var f in c)c.hasOwnProperty(f)&&(a=c[f],document.cookie=f+"\x3d"+encodeURIComponent(a)+"; expires\x3d"+b.toUTCString()+
 "; path\x3d/; SameSite\x3dLax");window.console&&console.log("UTMs salvas em cookies:",c)}})();</script>
-<script type="text/javascript" id="" charset="">(function(a,e,b,f,g,c,d){a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)};c=e.createElement(f);c.async=1;c.src="https://www.clarity.ms/tag/"+g;d=e.getElementsByTagName(f)[0];d.parentNode.insertBefore(c,d)})(window,document,"clarity","script","v42bdaba1r");</script><script type="text/javascript" id="" charset="">!function(a,b,d,e){if(!a.oaiq){var c=function(){c.q.push(arguments)};c.q=[];a.oaiq=c;a=b.createElement(d);a.async=1;a.src=e;b=b.getElementsByTagName(d)[0];b.parentNode.insertBefore(a,b)}}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"PkCy47ZWfZBDdNK5PFLddg",debug:!0});</script></body></html>
+<script type="text/javascript" id="" charset="">(function(a,e,b,f,g,c,d){a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)};c=e.createElement(f);c.async=1;c.src="https://www.clarity.ms/tag/"+g;d=e.getElementsByTagName(f)[0];d.parentNode.insertBefore(c,d)})(window,document,"clarity","script","v42bdaba1r");</script><script type="text/javascript" id="" charset="">!function(a,b,d,e){if(!a.oaiq){var c=function(){c.q.push(arguments)};c.q=[];a.oaiq=c;a=b.createElement(d);a.async=1;a.src=e;b=b.getElementsByTagName(d)[0];b.parentNode.insertBefore(a,b)}}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"PkCy47ZWfZBDdNK5PFLddg",debug:!0});</script><script id="gio-yt-js">
+(function () {
+  function abrir(el) {
+    var id = el.getAttribute("data-yt"); if (!id) return;
+    var f = document.createElement("iframe");
+    f.src = "https://www.youtube.com/embed/" + id + "?autoplay=1&rel=0&modestbranding=1&playsinline=1";
+    f.title = "Vídeo"; f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    f.setAttribute("allowfullscreen", ""); f.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+    el.innerHTML = ""; el.appendChild(f); el.removeAttribute("role"); el.style.cursor = "default";
+  }
+  document.addEventListener("click", function (e) { var el = e.target.closest && e.target.closest(".gio-yt[data-yt]"); if (el) abrir(el); });
+  document.addEventListener("keydown", function (e) { if (e.key !== "Enter" && e.key !== " ") return; var el = e.target.closest && e.target.closest(".gio-yt[data-yt]"); if (el) { e.preventDefault(); abrir(el); } });
+})();
+</script>
+</body></html>
