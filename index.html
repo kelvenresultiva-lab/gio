@@ -821,6 +821,19 @@ html { scroll-behavior: smooth; }
   .elementor-6505 .elementor-element-051cacb::before { top: auto !important; height: 300px !important; background-size: auto, cover; background-position: 0 0, 56% 50%; -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 38%, #000 82%, transparent 100%), linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0%, #000 38%, #000 82%, transparent 100%), linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%); }
 }
 </style>
+<style id="mobile-faixa-preco">
+/* Celular: "ou à vista" na linha de baixo e a faixa com o mesmo fundo do hero */
+.gio-quebra { display: none; }
+@media (max-width: 767px) {
+  .gio-quebra { display: block; }
+  .elementor-6505 .elementor-element.elementor-element-2204f83 {
+    background-image: linear-gradient(180deg, rgb(7, 1, 10) 0%, rgba(7, 1, 10, 0) 38%, rgba(7, 1, 10, 0) 62%, rgb(7, 1, 10) 100%), linear-gradient(rgba(7, 1, 10, 0.34), rgba(7, 1, 10, 0.34)), url("https://vivendodevideo.com.br/wp-content/uploads/2025/04/Bg-dobra-1-2.webp") !important;
+    background-size: 100% 100%, 100% 100%, cover !important;
+    background-position: 0 0, 0 0, 50% 0 !important;
+    background-repeat: no-repeat !important;
+  }
+}
+</style>
 </head>
 <body data-rsssl="1" class="wp-singular page-template page-template-elementor_canvas page page-id-6505 wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-canvas elementor-kit-8 elementor-page elementor-page-6505 e--ua-blink e--ua-chrome e--ua-webkit" data-elementor-device-mode="desktop" cz-shortcut-listen="true">
 	<!-- Google Tag Manager (noscript) -->
@@ -904,7 +917,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 								</div>
 				</div>
-				<div class="gio-preco">por <strong>7x de R$ 7,98</strong> ou à vista por <strong>R$ 49,90</strong></div>
+				<div class="gio-preco">por <strong>7x de R$ 7,98</strong><br class="gio-quebra"> ou à vista por <strong>R$ 49,90</strong></div>
 <div class="elementor-element elementor-element-7609e89 elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id="7609e89" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
 									<p>Compra 100% segura! Receba seu acesso imediatamente após a confirmação do pagamento.</p>								</div>
