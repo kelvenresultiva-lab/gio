@@ -169,7 +169,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 </style><script type="text/javascript" async="" src="./arquivos/f.txt"></script><script src="./arquivos/wp-emoji-release.min.js.transferir" defer=""></script><style id="hero-override">
 /* HERO DESKTOP: fundo novo (imagem em arquivos/hero-bg.webp) */
-@media (min-width: 1025px) {
+@media (min-width: 768px) {
+  /* tira a foto de outra pessoa (camada ::before do Elementor) que aparecia atrás do hero */
+  .elementor-6505 .elementor-element.elementor-element-82c3dfc::before { display: none !important; background-image: none !important; }
   .elementor-6505 .elementor-element.elementor-element-82c3dfc {
     /* imagem inteira (sem cortar o Gio na direita), com a base se misturando ao fundo escuro */
     background-image: linear-gradient(180deg, rgba(5, 10, 24, 0) 0%, rgba(5, 10, 24, 0) 52%, #050a18 68%), url("./arquivos/hero-bg.webp") !important;
