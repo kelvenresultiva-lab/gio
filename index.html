@@ -828,12 +828,7 @@ html { scroll-behavior: smooth; }
 .gio-quebra { display: none; }
 @media (max-width: 767px) {
   .gio-quebra { display: block; }
-  .elementor-6505 .elementor-element.elementor-element-2204f83 {
-    background-image: linear-gradient(180deg, rgb(7, 1, 10) 0%, rgba(7, 1, 10, 0) 38%, rgba(7, 1, 10, 0) 62%, rgb(7, 1, 10) 100%), linear-gradient(rgba(7, 1, 10, 0.34), rgba(7, 1, 10, 0.34)), url("https://vivendodevideo.com.br/wp-content/uploads/2025/04/Bg-dobra-1-2.webp") !important;
-    background-size: 100% 100%, 100% 100%, cover !important;
-    background-position: 0 0, 0 0, 50% 0 !important;
-    background-repeat: no-repeat !important;
-  }
+  /* faixa: sem fundo próprio, igual à seção de depoimentos (cor da página + granulado) */
 }
 </style>
 <style id="cta-mobile">
@@ -860,6 +855,22 @@ html { scroll-behavior: smooth; }
   .elementor-6505 .elementor-element.elementor-element-e6ea6e7 { padding-left: 14px !important; padding-right: 14px !important; }
   .elementor-6505 .elementor-element.elementor-element-56d1a8c > .e-con-inner > .e-con,
   .elementor-6505 .elementor-element.elementor-element-938842f > .e-con-inner > .e-con:not(.elementor-element-e6ea6e7) { padding-left: 8px !important; padding-right: 8px !important; }
+}
+</style>
+<style id="faixa-mesmo-fundo">
+/* Faixa: o fundo passa a ser idêntico ao da seção de depoimentos (cor da página + granulado).
+   A tarja escura das pontas (::before) sai; as pontas agora esmaecem só a própria faixa, por máscara. */
+.elementor-6505 .elementor-element.elementor-element-2204f83::before { display: none !important; }
+.elementor-6505 .elementor-element.elementor-element-2204f83 > .elementor-element-8148a7a,
+.elementor-6505 .elementor-element.elementor-element-2204f83 > .elementor-element-51ecbc0 {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+  -webkit-mask-size: 100% 400%;
+  mask-size: 100% 400%;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 </style>
 </head>
