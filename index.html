@@ -915,6 +915,16 @@ html { scroll-behavior: smooth; }
 .gio-yt-play::after { content: ""; position: absolute; left: 27px; top: 14px; border-style: solid; border-width: 10px 0 10px 18px; border-color: transparent transparent transparent #fff; }
 .gio-yt:hover .gio-yt-play, .gio-yt:focus-visible .gio-yt-play { transform: scale(1.08); background: #e00; }
 </style>
+<style id="desempenho-gio">
+/* Desempenho: filtros (blur/contraste) e modos de mistura forçam o navegador a repintar camadas enormes a cada rolagem.
+   Todos eram decorativos (brilhos já suaves e ajuste leve de contraste), então ficam desligados. */
+*, *::before, *::after {
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+</style>
 </head>
 <body data-rsssl="1" class="wp-singular page-template page-template-elementor_canvas page page-id-6505 wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-canvas elementor-kit-8 elementor-page elementor-page-6505 e--ua-blink e--ua-chrome e--ua-webkit" data-elementor-device-mode="desktop" cz-shortcut-listen="true">
 	<!-- Google Tag Manager (noscript) -->
@@ -1906,29 +1916,26 @@ Por apenas R$ 69,90, você <span style="color: #fcf7ff;">aprende a treinar mira,
 
 <!-- Script que adiciona a classe 'ativo7' a elementos visíveis no scroll -->
 <script> 
-  // Seleciona todos os elementos com essas classes para aplicar o efeito
-  const elementos = document.querySelectorAll(".scroll-left, .scroll-left2, .scroll-right, .scroll-right2, .scroll-top, .scroll-top2, .scroll-txt2, .scroll-bottom, .scroll-bottom2, .l1, .l2, .l3, .l4, .l5, .l6, .l7, .l8, .l9, .l10, .perspectiva"); 
-
-  // Define a altura de referência para o gatilho da animação
-  const posicaoScroll = window.innerHeight * 0.5; 
-
-  // Função que ativa/desativa classe com base na posição do scroll
-  function fadeScroll() {
-    elementos.forEach(elemento => { 
-      // Calcula a distância do topo do elemento até a "linha de ativação"
-      const elementoTop = elemento.getBoundingClientRect().top - posicaoScroll; 
-
-      // Se estiver dentro do alcance (ex: 280px), ativa a animação
-      if (elementoTop < 280) { 
-        elemento.classList.add("ativo7");
-      } else { 
-        elemento.classList.remove("ativo7");
-      }
-    });
-  } 
-
-  // Ativa a função toda vez que o usuário rolar a página
-  window.addEventListener("scroll", fadeScroll); 
+  // Animação ao rolar: usa IntersectionObserver (não mede o layout a cada rolagem).
+  // Regra mantida: o elemento fica "ativo7" quando o topo dele está acima da linha de ativação (50% da tela + 280px).
+  (function () {
+    var seletor = ".scroll-left, .scroll-left2, .scroll-right, .scroll-right2, .scroll-top, .scroll-top2, .scroll-txt2, .scroll-bottom, .scroll-bottom2, .l1, .l2, .l3, .l4, .l5, .l6, .l7, .l8, .l9, .l10, .perspectiva";
+    var elementos = Array.prototype.slice.call(document.querySelectorAll(seletor));
+    if (!elementos.length) return;
+    if (!("IntersectionObserver" in window)) { elementos.forEach(function (el) { el.classList.add("ativo7"); }); return; }
+    var io = null, timer = null;
+    function montar() {
+      if (io) io.disconnect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      var linha = Math.min(vh, vh * 0.5 + 280);
+      io = new IntersectionObserver(function (entradas) {
+        entradas.forEach(function (e) { e.target.classList.toggle("ativo7", e.isIntersecting); });
+      }, { root: null, rootMargin: "100000px 0px -" + Math.max(0, Math.round(vh - linha)) + "px 0px", threshold: 0 });
+      elementos.forEach(function (el) { io.observe(el); });
+    }
+    montar();
+    window.addEventListener("resize", function () { clearTimeout(timer); timer = setTimeout(montar, 200); }, { passive: true });
+  })(); 
 </script>
 
 
@@ -2143,6 +2150,25 @@ function(b,c){var f="https://analytics.tiktok.com/i18n/pixel/events.js";a._i=a._
   }
   document.addEventListener("click", function (e) { var el = e.target.closest && e.target.closest(".gio-yt[data-yt]"); if (el) abrir(el); });
   document.addEventListener("keydown", function (e) { if (e.key !== "Enter" && e.key !== " ") return; var el = e.target.closest && e.target.closest(".gio-yt[data-yt]"); if (el) { e.preventDefault(); abrir(el); } });
+})();
+</script>
+<script id="gio-menu-js">
+/* Menu do celular sem depender do JavaScript do Elementor.
+   Só age quando o bloco está isolado do Elementor (sem data-element_type); no site original o Elementor cuida do menu. */
+(function () {
+  var w = document.querySelector(".elementor-widget-nav-menu");
+  if (!w || w.hasAttribute("data-element_type")) return;
+  var t = w.querySelector(".elementor-menu-toggle"), n = w.querySelector(".elementor-nav-menu--dropdown");
+  if (!t || !n) return;
+  function abrir(sim) {
+    t.classList.toggle("elementor-active", sim);
+    t.setAttribute("aria-expanded", sim ? "true" : "false");
+    n.setAttribute("aria-hidden", sim ? "false" : "true");
+    n.style.setProperty("--menu-height", sim ? n.scrollHeight + "px" : "0");
+  }
+  t.addEventListener("click", function () { abrir(!t.classList.contains("elementor-active")); });
+  t.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); t.click(); } });
+  n.addEventListener("click", function (e) { if (e.target.closest("a")) abrir(false); });
 })();
 </script>
 </body></html>
