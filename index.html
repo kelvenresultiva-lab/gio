@@ -171,9 +171,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 /* HERO DESKTOP: fundo novo (imagem em arquivos/hero-bg.webp) */
 @media (min-width: 1025px) {
   .elementor-6505 .elementor-element.elementor-element-82c3dfc {
-    background-image: url("./arquivos/hero-bg.webp") !important;
-    background-size: cover !important;
-    background-position: center right !important;
+    /* imagem inteira (sem cortar o Gio na direita), com a base se misturando ao fundo escuro */
+    background-image: linear-gradient(180deg, rgba(5, 10, 24, 0) 0%, rgba(5, 10, 24, 0) 52%, #050a18 68%), url("./arquivos/hero-bg.webp") !important;
+    background-size: 100% 100%, 100% auto !important;
+    background-position: 0 0, center top !important;
     background-repeat: no-repeat !important;
     background-color: #050a18 !important;
   }
