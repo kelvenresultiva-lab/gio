@@ -739,7 +739,6 @@ body, .elementor-widget-container, .elementor-nav-menu a, .elementor-item {
     z-index: -1;
     pointer-events: none;
     background: url("./arquivos/gio-foto.jpg") 70% 28% / cover no-repeat;
-    filter: saturate(1.12) contrast(1.05);
     -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 60%, transparent 100%), linear-gradient(180deg, #000 0%, #000 72%, transparent 100%);
     -webkit-mask-composite: source-in;
     mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 60%, transparent 100%), linear-gradient(180deg, #000 0%, #000 72%, transparent 100%);
@@ -762,7 +761,6 @@ body, .elementor-widget-container, .elementor-nav-menu a, .elementor-item {
     z-index: -1;
     pointer-events: none;
     background: url("./arquivos/gio-foto.jpg") 60% 22% / cover no-repeat;
-    filter: saturate(1.12) contrast(1.05);
     -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 42%, transparent 90%);
     mask-image: linear-gradient(180deg, #000 0%, #000 42%, transparent 90%);
   }
@@ -804,7 +802,6 @@ html { scroll-behavior: smooth; }
   z-index: -1;
   pointer-events: none;
   background: linear-gradient(180deg, rgba(5, 3, 8, 0.45) 0%, rgba(5, 3, 8, 0.12) 100%), url("./arquivos/time-trofeu.webp") 50% 62% / cover no-repeat;
-  filter: saturate(1.1) contrast(1.05);
   -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.45) 28%, #000 55%, #000 80%, transparent 100%), linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
   -webkit-mask-composite: source-in;
   mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.45) 28%, #000 55%, #000 80%, transparent 100%), linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
@@ -916,14 +913,25 @@ html { scroll-behavior: smooth; }
 .gio-yt:hover .gio-yt-play, .gio-yt:focus-visible .gio-yt-play { transform: scale(1.08); background: #e00; }
 </style>
 <style id="desempenho-gio">
-/* Desempenho: filtros (blur/contraste) e modos de mistura forçam o navegador a repintar camadas enormes a cada rolagem.
-   Todos eram decorativos (brilhos já suaves e ajuste leve de contraste), então ficam desligados. */
-*, *::before, *::after {
-  filter: none !important;
-  mix-blend-mode: normal !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
+/* Desempenho sem mudar o visual.
+   Filtros de desfoque em imagens enormes e modos de mistura forçam repintar camadas gigantes a cada rolagem. */
+*, *::before, *::after { mix-blend-mode: normal !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+
+/* Brilhos roxos/rosa das laterais: o desfoque agora vem pronto dentro da imagem (mesmo resultado, sem filter) */
+.elementor-6505 .elementor-element.elementor-element-0e7f5b8,
+.elementor-6505 .elementor-element.elementor-element-7d95766,
+.elementor-6505 .elementor-element.elementor-element-ed4dc08,
+.elementor-6505 .elementor-element.elementor-element-fb91489 { filter: none !important; }
+.elementor-6505 .elementor-element-0e7f5b8 img,
+.elementor-6505 .elementor-element-7d95766 img { content: url("./arquivos/glow-a.webp"); width: 1292.4px !important; height: 1292.4px !important; max-width: none !important; margin: -500px !important; }
+.elementor-6505 .elementor-element-ed4dc08 img { content: url("./arquivos/glow-b-roxo.webp"); width: 1430px !important; height: 1430px !important; max-width: none !important; margin: -375px !important; opacity: 1 !important; }
+.elementor-6505 .elementor-element-fb91489 img { content: url("./arquivos/glow-b-rosa.webp"); width: 1430px !important; height: 1430px !important; max-width: none !important; margin: -375px !important; opacity: 1 !important; }
+
+/* Faixa em movimento: a cópia "sombra" ficava desfocada (e repintava a cada quadro); agora fica nítida e mais suave */
+.elementor-6505 .elementor-element.elementor-element-8148a7a { filter: none !important; opacity: 0.38 !important; }
+
+/* Animação de entrada: mantém o desfoque inicial; depois de aparecer o elemento fica sem filtro */
+.elementor-6505 .ativo7, .ativo7 { filter: none !important; }
 </style>
 </head>
 <body data-rsssl="1" class="wp-singular page-template page-template-elementor_canvas page page-id-6505 wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-canvas elementor-kit-8 elementor-page elementor-page-6505 e--ua-blink e--ua-chrome e--ua-webkit" data-elementor-device-mode="desktop" cz-shortcut-listen="true">
